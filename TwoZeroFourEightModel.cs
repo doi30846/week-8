@@ -11,6 +11,9 @@ namespace twozerofoureight
         protected int boardSize; // default is 4
         protected int[,] board;
         protected Random rand;
+        protected int Score;
+     
+
 
         public TwoZeroFourEightModel() : this(4)
         {
@@ -20,7 +23,20 @@ namespace twozerofoureight
         public int[,] GetBoard()
         {
             return board;
+
         }
+        public int GetScore()
+        {
+
+            return Score;
+
+        }
+        //public int GetScore() //week8wrong
+        //{
+
+        //    return Score;
+
+        //}
 
         public TwoZeroFourEightModel(int size)
         {
@@ -46,6 +62,7 @@ namespace twozerofoureight
                 if (board[x, y] == 0)
                 {
                     board[x, y] = 2;
+                    Score += 2;//+2alltime
                     break;
                 }
             }
@@ -162,6 +179,9 @@ namespace twozerofoureight
             int[] buffer;
             int pos;
 
+
+            
+
             int[] rangeX = Enumerable.Range(0, boardSize).ToArray();
             int[] rangeY = Enumerable.Range(0, boardSize).ToArray();
             Array.Reverse(rangeX);
@@ -189,6 +209,7 @@ namespace twozerofoureight
                     {
                         buffer[j - 1] *= 2;
                         buffer[j] = 0;
+                        
                     }
                 }
                 // shift left again
@@ -240,6 +261,10 @@ namespace twozerofoureight
                     {
                         buffer[j - 1] *= 2;
                         buffer[j] = 0;
+                        //labweek8wrong
+                        Score += 2;
+                        Score  *=2;
+                        //labweek8
                     }
                 }
                 // shift left again
@@ -249,11 +274,13 @@ namespace twozerofoureight
                     if (buffer[j] != 0)
                     {
                         board[i, pos] = buffer[j];
+                        
                         pos++;
                     }
                 }
                 for (int k = pos; k != boardSize; k++)
                 {
+                    
                     board[i, k] = 0;
                 }
             }
