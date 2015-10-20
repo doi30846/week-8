@@ -262,8 +262,8 @@ namespace twozerofoureight
                         buffer[j - 1] *= 2;
                         buffer[j] = 0;
                         //labweek8wrong
-                        Score += 2;
-                        Score  *=2;
+                        //Score += 2;
+                        //Score  *=2;
                         //labweek8
                     }
                 }
