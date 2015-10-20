@@ -48,6 +48,7 @@
             this.btnUp = new System.Windows.Forms.Button();
             this.btnRight = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
+            this.lblScore = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl00
@@ -266,11 +267,22 @@
             this.btnDown.UseVisualStyleBackColor = true;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
-            // Form1
+            // lblScore
+            // 
+            this.lblScore.AutoSize = true;
+            this.lblScore.Location = new System.Drawing.Point(140, 272);
+            this.lblScore.Name = "lblScore";
+            this.lblScore.Size = new System.Drawing.Size(35, 13);
+            this.lblScore.TabIndex = 20;
+            this.lblScore.Text = "label1";
+            this.lblScore.Click += new System.EventHandler(this.lblScore_Click);
+            // 
+            // TwoZeroFourEightView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 428);
+            this.Controls.Add(this.lblScore);
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.btnRight);
             this.Controls.Add(this.btnUp);
@@ -291,9 +303,11 @@
             this.Controls.Add(this.lbl02);
             this.Controls.Add(this.lbl01);
             this.Controls.Add(this.lbl00);
-            this.Name = "Form1";
+            this.Name = "TwoZeroFourEightView";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.TwoZeroFourEightView_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -319,6 +333,7 @@
         private System.Windows.Forms.Button btnUp;
         private System.Windows.Forms.Button btnRight;
         private System.Windows.Forms.Button btnDown;
+        private System.Windows.Forms.Label lblScore;
     }
 }
 
