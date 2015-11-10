@@ -14,12 +14,20 @@ namespace twozerofoureight
     {
         Model model;
         Controller controller;
-       
+
+        /// <summary>
+        /// 
+        /// </summary>
+       TwoZeroFourEightScoreView f2= new TwoZeroFourEightScoreView();
+
+        
         public TwoZeroFourEightView()
         {
             InitializeComponent();
+            
             model = new TwoZeroFourEightModel();
             model.AttachObserver(this);
+            model.AttachObserver(f2);
             controller = new TwoZeroFourEightController();
             controller.AddModel(model);
             controller.ActionPerformed(TwoZeroFourEightController.LEFT);
@@ -76,20 +84,24 @@ namespace twozerofoureight
             UpdateTile(lbl31,board[3, 1]);
             UpdateTile(lbl32,board[3, 2]);
             UpdateTile(lbl33,board[3, 3]);
-            
-               
+
+            //TwoZeroFourEightScoreView f2 = new TwoZeroFourEightScoreView();
+            //f2.Show();
+            //f2.Passvalue = lblScore.Text;
+
         }
         private void UpdateScore(int Score)
         {
-           // UpdateTile(lblScore, 5);
+          
             lblScore.Text = Score.ToString();
+           // f2.input(Score);
         }
 
 
         private void btnLeft_Click(object sender, EventArgs e)
         {
             controller.ActionPerformed(TwoZeroFourEightController.LEFT);
-           // UpdateTile(lblScore, 5);
+           
 
         }
 
@@ -110,11 +122,24 @@ namespace twozerofoureight
 
         private void TwoZeroFourEightView_Load(object sender, EventArgs e)
         {
-           
+            f2.Show();
         }
 
         private void lblScore_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // // this.Close(); //close this form
+            //  TwoZeroFourEightScoreView f2 = new TwoZeroFourEightScoreView();
+            //TwoZeroFourEightScoreView f2 = new TwoZeroFourEightScoreView();
+            //f2.Passvalue =lblScore.Text;
+
+
+            //f2.ShowDialog();
+           // f2.Show();
 
         }
     }
